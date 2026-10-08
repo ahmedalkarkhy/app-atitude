@@ -1,0 +1,2983 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>O app da Atitude · Brasil Clips</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400..700&display=swap">
+<style>
+html, body { margin: 0; height: 100%; background: #05070d; overflow: hidden; }
+#stage { position: fixed; inset: 0; }
+#deck { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px; transform-origin: 0 0; }
+#deck section { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; box-sizing: border-box; opacity: 0; visibility: hidden; transition: opacity .55s ease, visibility 0s linear .55s; }
+#deck section.active { opacity: 1; visibility: visible; transition: opacity .55s ease; }
+#deck section * { box-sizing: border-box; }
+#deck p, #deck h1, #deck h2, #deck h3, #deck ul { margin: 0; }
+#deck aside { display: none; }
+#deck svg.icon { flex: none; display: block; }
+#deck [data-build-in] { opacity: 0; }
+#deck section.active [data-build-in] { animation: var(--kind, fade) .75s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(var(--order, 1) * .13s); }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rise { from { opacity: 0; transform: translateY(44px); } to { opacity: 1; transform: none; } }
+@keyframes pop { from { opacity: 0; transform: scale(.9); } to { opacity: 1; transform: none; } }
+#bar { position: fixed; left: 0; bottom: 0; height: 4px; width: 0; background: #ff5a1f; transition: width .4s ease; z-index: 5; }
+@media (prefers-reduced-motion: reduce) {
+  #deck section.active [data-build-in] { animation: none; opacity: 1; }
+  #deck section { transition: none; }
+}
+</style>
+</head>
+<body>
+<div id="stage"><div id="deck">
+<section
+  id="capa"
+  data-transition="fade"
+  style="
+    background: #0b0f1a;
+    color: #eef2f8;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <div
+    style="
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 1920px;
+      height: 1080px;
+      background: radial-gradient(
+        circle at 6% 92%,
+        rgba(255, 90, 31, 0.4) 0%,
+        rgba(255, 90, 31, 0) 44%
+      );
+    "
+  ></div>
+  <div
+    style="
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 1920px;
+      height: 1080px;
+      background: radial-gradient(
+        circle at 46% 0%,
+        rgba(56, 189, 248, 0.24) 0%,
+        rgba(56, 189, 248, 0) 40%
+      );
+    "
+  ></div>
+  <img
+    src="img/iba-1004b.jpg"
+    alt="Pr. Josué Valandro Jr. pregando na Igreja Batista Atitude"
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 1056px;
+      top: 0px;
+      width: 864px;
+      height: 1080px;
+      object-fit: cover;
+    "
+  />
+  <div
+    style="
+      position: absolute;
+      left: 1056px;
+      top: 0px;
+      width: 520px;
+      height: 1080px;
+      background: linear-gradient(
+        to right,
+        #0b0f1a 0%,
+        rgba(11, 15, 26, 0) 100%
+      );
+    "
+  ></div>
+  <p
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 900px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff5a1f;
+    "
+  >
+    Proposta · Brasil Clips
+  </p>
+  <h1
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 300px;
+      width: 940px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 120px;
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -3px;
+    "
+  >
+    O app da Atitude
+  </h1>
+  <p
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 600px;
+      width: 820px;
+      font-size: 32px;
+      line-height: 1.4;
+      color: #b9c3d4;
+    "
+  >
+    Um lugar próprio para o devocional, os cultos e a jornada de cada membro da
+    Igreja Batista Atitude.
+  </p>
+  <p
+    data-build-in="fade 4 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      bottom: 64px;
+      width: 980px;
+      font-size: 24px;
+      color: #b9c3d4;
+    "
+  >
+    Para o Pr. Josué Valandro Jr. · Tecnologia desenvolvida por Church
+    Technology
+  </p>
+  <aside>
+    Abertura. Brasil Clips apresenta, a tecnologia é da Church Technology.
+    Deixar claro que a proposta foi pensada para a Atitude.
+  </aside>
+</section>
+
+<section
+  id="hoje"
+  data-transition="push"
+  style="
+    background: #0b0f1a;
+    color: #eef2f8;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 900px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff5a1f;
+    "
+  >
+    01 · Contexto
+  </p>
+  <h2
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 176px;
+      width: 1664px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    "
+  >
+    A audiência já existe
+  </h2>
+  <div
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 330px;
+      width: 816px;
+      height: 264px;
+      display: flex;
+      flex-direction: row;
+      gap: 36px;
+      align-items: center;
+      background: #141b2d;
+      padding: 40px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 120px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -4px;
+        white-space: nowrap;
+      "
+    >
+      831 mil
+    </p>
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 8px">
+      <p
+        style="
+          font-family:
+            &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+          font-size: 24px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #38bdf8;
+        "
+      >
+        Pastor
+      </p>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        seguidores do Pr. Josué no Instagram
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 976px;
+      top: 330px;
+      width: 816px;
+      height: 264px;
+      display: flex;
+      flex-direction: row;
+      gap: 36px;
+      align-items: center;
+      background: #141b2d;
+      padding: 40px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 120px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -4px;
+        white-space: nowrap;
+      "
+    >
+      318 mil
+    </p>
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 8px">
+      <p
+        style="
+          font-family:
+            &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+          font-size: 24px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #38bdf8;
+        "
+      >
+        Igreja
+      </p>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        seguidores da Atitude Sede
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 4 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 618px;
+      width: 816px;
+      height: 264px;
+      display: flex;
+      flex-direction: row;
+      gap: 36px;
+      align-items: center;
+      background: #141b2d;
+      padding: 40px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 120px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -4px;
+        white-space: nowrap;
+      "
+    >
+      15 mil
+    </p>
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 8px">
+      <p
+        style="
+          font-family:
+            &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+          font-size: 24px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #38bdf8;
+        "
+      >
+        Conteúdo
+      </p>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        posts publicados pela igreja
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 5 auto"
+    style="
+      position: absolute;
+      left: 976px;
+      top: 618px;
+      width: 816px;
+      height: 264px;
+      display: flex;
+      flex-direction: row;
+      gap: 36px;
+      align-items: center;
+      background: #141b2d;
+      padding: 40px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 120px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -4px;
+        white-space: nowrap;
+      "
+    >
+      5
+    </p>
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 8px">
+      <p
+        style="
+          font-family:
+            &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+          font-size: 24px;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          color: #38bdf8;
+        "
+      >
+        Cultos
+      </p>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        por semana na sede, quarta e domingo
+      </p>
+    </div>
+  </div>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      bottom: 64px;
+      width: 1300px;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    Fonte: perfis @josuevalandrojr e @ibatitude no Instagram, outubro de 2026
+  </p>
+  <p
+    style="
+      position: absolute;
+      right: 128px;
+      bottom: 64px;
+      width: 200px;
+      text-align: right;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    02 / 14
+  </p>
+  <aside>
+    Começar reconhecendo o que já foi construído. A base está formada, falta um
+    lugar próprio para ela.
+  </aside>
+</section>
+
+<section
+  id="problema"
+  data-transition="fade"
+  style="
+    background: #101626;
+    color: #eef2f8;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 900px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff5a1f;
+    "
+  >
+    01 · Contexto
+  </p>
+  <h2
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 176px;
+      width: 1664px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    "
+  >
+    Mas ela mora em terreno alugado
+  </h2>
+  <div
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 330px;
+      width: 533px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 48px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+        color: #ff5a1f;
+      "
+    >
+      01
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        O algoritmo decide
+      </h3>
+      <p style="font-size: 32px; line-height: 1.4; color: #b9c3d4">
+        Cada post disputa atenção com todo o resto do feed. Quem segue nem
+        sempre vê.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 693px;
+      top: 330px;
+      width: 533px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 48px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+        color: #ff5a1f;
+      "
+    >
+      02
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Tudo espalhado
+      </h3>
+      <p style="font-size: 32px; line-height: 1.4; color: #b9c3d4">
+        Devocional, leitura, intercessão, contribuição e cultos vivem em links
+        diferentes.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 4 auto"
+    style="
+      position: absolute;
+      left: 1258px;
+      top: 330px;
+      width: 534px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 48px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+        color: #ff5a1f;
+      "
+    >
+      03
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Sem retorno
+      </h3>
+      <p style="font-size: 32px; line-height: 1.4; color: #b9c3d4">
+        Não dá para saber quem leu o devocional hoje nem quem parou de voltar.
+      </p>
+    </div>
+  </div>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      bottom: 64px;
+      width: 1300px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #9aa6ba;
+    "
+  >
+    Brasil Clips · Church Technology
+  </p>
+  <p
+    style="
+      position: absolute;
+      right: 128px;
+      bottom: 64px;
+      width: 200px;
+      text-align: right;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    03 / 14
+  </p>
+  <aside>
+    O Instagram continua sendo a vitrine. O ponto é que o relacionamento diário
+    não deveria depender dele.
+  </aside>
+</section>
+
+<section
+  id="ideia"
+  data-transition="push"
+  style="
+    background: #ff5a1f;
+    color: #0b0f1a;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <div
+    style="
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 1920px;
+      height: 1080px;
+      background: radial-gradient(
+        circle at 88% 8%,
+        rgba(255, 190, 150, 0.75) 0%,
+        rgba(255, 190, 150, 0) 48%
+      );
+    "
+  ></div>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 900px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    "
+  >
+    02 · A proposta
+  </p>
+  <h2
+    data-build-in="rise 1 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 330px;
+      width: 1560px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 120px;
+      font-weight: 700;
+      line-height: 1.04;
+      letter-spacing: -3px;
+    "
+  >
+    Um lugar próprio, com a cara da Atitude, no bolso de cada membro.
+  </h2>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      bottom: 64px;
+      width: 1300px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    "
+  >
+    Brasil Clips · Church Technology
+  </p>
+  <p
+    style="
+      position: absolute;
+      right: 128px;
+      bottom: 64px;
+      width: 200px;
+      text-align: right;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+    "
+  >
+    04 / 14
+  </p>
+  <aside>Uma frase só. Pausar aqui antes de abrir o que entra no app.</aside>
+</section>
+
+<section
+  id="dentro"
+  data-transition="fade"
+  style="
+    background: #0b0f1a;
+    color: #eef2f8;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 900px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff5a1f;
+    "
+  >
+    02 · O app
+  </p>
+  <h2
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 176px;
+      width: 1664px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    "
+  >
+    O que entra no app
+  </h2>
+  <div
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 330px;
+      width: 533px;
+      height: 264px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 32px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 48px; height: 48px"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Devocional diário
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Manhã com Deus em texto e áudio, com aviso toda manhã.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 693px;
+      top: 330px;
+      width: 533px;
+      height: 264px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 32px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 48px; height: 48px"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Plano de leitura
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Leitura bíblica com progresso e sequência de dias.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 4 auto"
+    style="
+      position: absolute;
+      left: 1258px;
+      top: 330px;
+      width: 534px;
+      height: 264px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 32px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 48px; height: 48px"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z"/></svg>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Cultos ao vivo
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Quarta e domingo com chat e pedidos de oração ao vivo.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 5 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 618px;
+      width: 533px;
+      height: 264px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 32px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 48px; height: 48px"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 20.5l1.3-4.6A8 8 0 1 1 21 12z"/></svg>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Intercessão
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Pedidos de oração enviados e acompanhados no app.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 6 auto"
+    style="
+      position: absolute;
+      left: 693px;
+      top: 618px;
+      width: 533px;
+      height: 264px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 32px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 48px; height: 48px"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14.5a5 5 0 0 1 4.5 5.5"/></svg>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Eventos
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Inscrição e check-in por QR code em conferências.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 7 auto"
+    style="
+      position: absolute;
+      left: 1258px;
+      top: 618px;
+      width: 534px;
+      height: 264px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 32px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 48px; height: 48px"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Contribuição
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Dízimos e ofertas a um toque, sem sair do app.
+      </p>
+    </div>
+  </div>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      bottom: 64px;
+      width: 1300px;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    Tudo o que a Atitude já oferece hoje, reunido em um só lugar
+  </p>
+  <p
+    style="
+      position: absolute;
+      right: 128px;
+      bottom: 64px;
+      width: 200px;
+      text-align: right;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    05 / 14
+  </p>
+  <aside>
+    Cada bloco corresponde a algo que a igreja já faz hoje e que aparece nos
+    destaques do Instagram: Devocional, Plano de Leitura, Cultos, Intercessão,
+    Contribuição. A lista final se fecha na etapa de descoberta.
+  </aside>
+</section>
+
+<section
+  id="pastor"
+  data-transition="fade"
+  style="
+    background: #101626;
+    color: #eef2f8;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <img
+    src="img/iba-1004a.jpg"
+    alt="Pr. Josué Valandro Jr. durante um culto na Atitude Barra"
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 620px;
+      height: 776px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid #26304a;
+    "
+  />
+  <p
+    style="
+      position: absolute;
+      left: 844px;
+      top: 128px;
+      width: 900px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff5a1f;
+    "
+  >
+    02 · O app
+  </p>
+  <h2
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 844px;
+      top: 176px;
+      width: 948px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    "
+  >
+    A voz do pastor, todo dia
+  </h2>
+  <p
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 844px;
+      top: 380px;
+      width: 948px;
+      font-size: 32px;
+      line-height: 1.4;
+      color: #9aa6ba;
+    "
+  >
+    O Pr. Josué já fala com 831 mil pessoas no Instagram. No app, essa palavra
+    chega direto, sem depender do alcance de cada post.
+  </p>
+  <div
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 844px;
+      top: 580px;
+      width: 948px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+      background: #141b2d;
+      padding: 24px 28px;
+      border: 1px solid #26304a;
+      border-radius: 16px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 36px; height: 36px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+    <p style="flex: 1; font-size: 32px; line-height: 1.3; font-weight: 600">
+      Devocional narrado na voz dele
+    </p>
+  </div>
+  <div
+    data-build-in="rise 4 auto"
+    style="
+      position: absolute;
+      left: 844px;
+      top: 684px;
+      width: 948px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+      background: #141b2d;
+      padding: 24px 28px;
+      border: 1px solid #26304a;
+      border-radius: 16px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 36px; height: 36px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+    <p style="flex: 1; font-size: 32px; line-height: 1.3; font-weight: 600">
+      Aviso no celular com a palavra do dia
+    </p>
+  </div>
+  <div
+    data-build-in="rise 5 auto"
+    style="
+      position: absolute;
+      left: 844px;
+      top: 788px;
+      width: 948px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+      background: #141b2d;
+      padding: 24px 28px;
+      border: 1px solid #26304a;
+      border-radius: 16px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 36px; height: 36px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+    <p style="flex: 1; font-size: 32px; line-height: 1.3; font-weight: 600">
+      Versículos explicados com IA, no tom da igreja
+    </p>
+  </div>
+  <p
+    style="
+      position: absolute;
+      right: 128px;
+      bottom: 64px;
+      width: 200px;
+      text-align: right;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    06 / 14
+  </p>
+  <aside>
+    O app não substitui o Instagram do pastor. Ele recebe quem o Instagram
+    desperta e dá a essa pessoa um hábito diário.
+  </aside>
+</section>
+
+<section
+  id="jornada"
+  data-transition="fade"
+  style="
+    background: #0b0f1a;
+    color: #eef2f8;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <img
+    src="img/iba-1005.jpg"
+    alt="Arte da campanha Jornada dos Sonhos, 12 semanas, da Igreja Batista Atitude"
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 1172px;
+      top: 128px;
+      width: 620px;
+      height: 776px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid #26304a;
+    "
+  />
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 900px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff5a1f;
+    "
+  >
+    02 · O app
+  </p>
+  <h2
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 176px;
+      width: 940px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    "
+  >
+    Campanhas viram jornadas
+  </h2>
+  <p
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 380px;
+      width: 940px;
+      font-size: 32px;
+      line-height: 1.4;
+      color: #b9c3d4;
+    "
+  >
+    A Jornada dos Sonhos, de 12 semanas, pode virar uma trilha dentro do app: um
+    passo por semana, progresso visível e conquistas ao concluir.
+  </p>
+  <div
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 640px;
+      width: 292px;
+      height: 264px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 28px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+        color: #ff5a1f;
+      "
+    >
+      12
+    </p>
+    <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+      semanas, um passo de cada vez
+    </p>
+  </div>
+  <div
+    data-build-in="rise 4 auto"
+    style="
+      position: absolute;
+      left: 452px;
+      top: 640px;
+      width: 292px;
+      height: 264px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 28px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 64px; height: 64px"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+    <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+      <b>Progresso</b><br />cada membro vê onde está
+    </p>
+  </div>
+  <div
+    data-build-in="rise 5 auto"
+    style="
+      position: absolute;
+      left: 776px;
+      top: 640px;
+      width: 292px;
+      height: 264px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 28px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 64px; height: 64px"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>
+    <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+      <b>Selos</b><br />conquistas ao concluir cada etapa
+    </p>
+  </div>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      bottom: 64px;
+      width: 940px;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    O mesmo vale para o tema do ano, planos de leitura e séries de mensagens
+  </p>
+  <p
+    style="
+      position: absolute;
+      right: 128px;
+      bottom: 64px;
+      width: 200px;
+      text-align: right;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    07 / 14
+  </p>
+  <aside>
+    Usar uma campanha real deles como exemplo. A arte ao lado é do próprio
+    Instagram da igreja.
+  </aside>
+</section>
+
+<section
+  id="case"
+  data-transition="push"
+  style="
+    background: #101626;
+    color: #eef2f8;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 820px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff5a1f;
+    "
+  >
+    03 · Tecnologia
+  </p>
+  <h2
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 176px;
+      width: 840px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    "
+  >
+    A tecnologia já está no ar
+  </h2>
+  <p
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 380px;
+      width: 820px;
+      font-size: 32px;
+      line-height: 1.4;
+      color: #9aa6ba;
+    "
+  >
+    Desenvolvida pela Church Technology. O Maná Sale, app devocional do Pr.
+    Leonardo Sale, roda nela em manasale.com.
+  </p>
+  <ul
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 570px;
+      width: 820px;
+      font-size: 32px;
+      line-height: 1.5;
+      font-weight: 600;
+      padding: 0px 0px 0px 36px;
+    "
+  >
+    <li>Devocional diário em texto e áudio</li>
+    <li>Explicação de versículos com IA</li>
+    <li>Lives com chat e contador de orações</li>
+    <li>Conquistas e sequência de dias</li>
+    <li>Eventos com check-in por QR code</li>
+  </ul>
+  <div
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 1040px;
+      top: 128px;
+      width: 752px;
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      background: #141b2d;
+      padding: 40px;
+      border: 1px solid #26304a;
+      border-radius: 28px;
+    "
+  >
+    <img
+      src="img/case-devocional.png"
+      alt="Tela do diário devocional do app Maná Sale no celular"
+      style="
+        width: 320px;
+        height: 692px;
+        object-fit: contain;
+        border-radius: 20px;
+        background: #fffdf9;
+      "
+    />
+    <img
+      src="img/case-conquistas.png"
+      alt="Tela de conquistas do app Maná Sale no celular"
+      style="
+        width: 320px;
+        height: 692px;
+        object-fit: contain;
+        border-radius: 20px;
+        background: #fffdf9;
+      "
+    />
+  </div>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      bottom: 64px;
+      width: 1300px;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    Telas reais do Maná Sale. O app da Atitude nasce com a identidade da igreja.
+  </p>
+  <p
+    style="
+      position: absolute;
+      right: 128px;
+      bottom: 64px;
+      width: 200px;
+      text-align: right;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    08 / 14
+  </p>
+  <aside>
+    Abrir o Maná Sale ao vivo no celular neste momento, se der. Mostrar o
+    devocional do dia e a tela de conquistas. Tecnologia desenvolvida by Church
+    Technology.
+  </aside>
+</section>
+
+<section
+  id="etapas"
+  data-transition="fade"
+  style="
+    background: #0b0f1a;
+    color: #eef2f8;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 900px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff5a1f;
+    "
+  >
+    03 · Construção
+  </p>
+  <h2
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 176px;
+      width: 1664px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    "
+  >
+    Do sim ao lançamento em quatro etapas
+  </h2>
+  <div
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 330px;
+      width: 392px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 36px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <p
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 72px;
+          font-weight: 700;
+          line-height: 1;
+          color: #ff5a1f;
+        "
+      >
+        01
+      </p>
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Descoberta
+      </h3>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Conteúdo, ministérios e o que entra na primeira versão.
+      </p>
+      <p
+        style="
+          font-family:
+            &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+          font-size: 24px;
+          color: #38bdf8;
+        "
+      >
+        [__ semanas]
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 552px;
+      top: 330px;
+      width: 392px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 36px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <p
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 72px;
+          font-weight: 700;
+          line-height: 1;
+          color: #ff5a1f;
+        "
+      >
+        02
+      </p>
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Identidade
+      </h3>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Design do app com a marca e as cores da Atitude.
+      </p>
+      <p
+        style="
+          font-family:
+            &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+          font-size: 24px;
+          color: #38bdf8;
+        "
+      >
+        [__ semanas]
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 4 auto"
+    style="
+      position: absolute;
+      left: 976px;
+      top: 330px;
+      width: 392px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 36px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <p
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 72px;
+          font-weight: 700;
+          line-height: 1;
+          color: #ff5a1f;
+        "
+      >
+        03
+      </p>
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Construção
+      </h3>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Desenvolvimento e teste com um grupo da igreja.
+      </p>
+      <p
+        style="
+          font-family:
+            &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+          font-size: 24px;
+          color: #38bdf8;
+        "
+      >
+        [__ semanas]
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 5 auto"
+    style="
+      position: absolute;
+      left: 1400px;
+      top: 330px;
+      width: 392px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #ff5a1f;
+      padding: 36px;
+      border-radius: 20px;
+    "
+  >
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <p
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 72px;
+          font-weight: 700;
+          line-height: 1;
+          color: #0b0f1a;
+        "
+      >
+        04
+      </p>
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+          color: #0b0f1a;
+        "
+      >
+        Lançamento
+      </h3>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <p style="font-size: 24px; line-height: 1.4; color: #0b0f1a">
+        História, aquecimento, 72 horas e revelação no evento.
+      </p>
+      <p
+        style="
+          font-family:
+            &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+          font-size: 24px;
+          color: #0b0f1a;
+        "
+      >
+        [__ semanas]
+      </p>
+    </div>
+  </div>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      bottom: 64px;
+      width: 1300px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #9aa6ba;
+    "
+  >
+    Brasil Clips · Church Technology
+  </p>
+  <p
+    style="
+      position: absolute;
+      right: 128px;
+      bottom: 64px;
+      width: 200px;
+      text-align: right;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    09 / 14
+  </p>
+  <aside>
+    Preencher os prazos antes de apresentar. A etapa 4 é detalhada nos três
+    slides seguintes.
+  </aside>
+</section>
+
+<section
+  id="historia"
+  data-transition="push"
+  style="
+    background: #101626;
+    color: #eef2f8;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 900px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff5a1f;
+    "
+  >
+    04 · Lançamento
+  </p>
+  <h2
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 176px;
+      width: 1664px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    "
+  >
+    O lançamento começa por uma história
+  </h2>
+  <p
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 300px;
+      width: 1500px;
+      font-size: 32px;
+      line-height: 1.4;
+      color: #b9c3d4;
+    "
+  >
+    Um pastor move a audiência por quem ele é. Quando o Pr. Josué fala, passa
+    credibilidade. O lançamento é ele contando por que isso existe.
+  </p>
+  <div
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 450px;
+      width: 533px;
+      height: 432px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 40px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+        color: #ff5a1f;
+      "
+    >
+      01
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        A história
+      </h3>
+      <p style="font-size: 32px; line-height: 1.4; color: #b9c3d4">
+        De onde vem a palavra dele e o que já foi construído.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 4 auto"
+    style="
+      position: absolute;
+      left: 693px;
+      top: 450px;
+      width: 533px;
+      height: 432px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 40px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+        color: #ff5a1f;
+      "
+    >
+      02
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        O porquê
+      </h3>
+      <p style="font-size: 32px; line-height: 1.4; color: #b9c3d4">
+        Por que a Atitude precisa de um lugar próprio agora.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 5 auto"
+    style="
+      position: absolute;
+      left: 1258px;
+      top: 450px;
+      width: 534px;
+      height: 432px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 40px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+        color: #ff5a1f;
+      "
+    >
+      03
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        O convite
+      </h3>
+      <p style="font-size: 32px; line-height: 1.4; color: #b9c3d4">
+        O que muda na vida de quem entra no primeiro dia.
+      </p>
+    </div>
+  </div>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      bottom: 64px;
+      width: 1300px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #9aa6ba;
+    "
+  >
+    Brasil Clips · Church Technology
+  </p>
+  <p
+    style="
+      position: absolute;
+      right: 128px;
+      bottom: 64px;
+      width: 200px;
+      text-align: right;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    10 / 14
+  </p>
+  <aside>
+    A história é construída junto com o pastor. Ele já tem trajetória e algo
+    grande para contar. Nosso trabalho é organizar isso em uma narrativa de
+    lançamento.
+  </aside>
+</section>
+
+<section
+  id="publico"
+  data-transition="fade"
+  style="
+    background: #0b0f1a;
+    color: #eef2f8;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 900px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff5a1f;
+    "
+  >
+    04 · Lançamento
+  </p>
+  <h2
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 176px;
+      width: 1664px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    "
+  >
+    Antes de falar, entender quem ouve
+  </h2>
+  <div
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 330px;
+      width: 392px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 36px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 64px; height: 64px"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17 14.5a5 5 0 0 1 4.5 5.5"/></svg>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Quem são
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Idade, cidade, membro da igreja ou seguidor de longe.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 552px;
+      top: 330px;
+      width: 392px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 36px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 64px; height: 64px"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        O que move
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Temas e formatos que mais geram resposta nos dois perfis.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 4 auto"
+    style="
+      position: absolute;
+      left: 976px;
+      top: 330px;
+      width: 392px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 36px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 64px; height: 64px"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Quando estão
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Dias e horários de pico, que definem a data e a hora do lançamento.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 5 auto"
+    style="
+      position: absolute;
+      left: 1400px;
+      top: 330px;
+      width: 392px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 36px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: #ff5a1f; width: 64px; height: 64px"><path d="M21 3L3 10.5l7 2.5 2.5 7z"/><path d="M21 3L10 13"/></svg>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Para quem anunciar
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Públicos dos anúncios no Instagram, a partir de quem já responde.
+      </p>
+    </div>
+  </div>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      bottom: 64px;
+      width: 1300px;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    Base: dados do Instagram de @josuevalandrojr e @ibatitude, com acesso
+    liberado pela igreja
+  </p>
+  <p
+    style="
+      position: absolute;
+      right: 128px;
+      bottom: 64px;
+      width: 200px;
+      text-align: right;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    11 / 14
+  </p>
+  <aside>
+    Pedir acesso aos Insights dos dois perfis. Sem esses dados a data, o horário
+    e os públicos dos anúncios viram chute.
+  </aside>
+</section>
+
+<section
+  id="cronograma"
+  data-transition="fade"
+  style="
+    background: #101626;
+    color: #eef2f8;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 900px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff5a1f;
+    "
+  >
+    04 · Lançamento
+  </p>
+  <h2
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 176px;
+      width: 1664px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    "
+  >
+    72 horas para o lançamento
+  </h2>
+  <div
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 330px;
+      width: 392px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 32px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -2px;
+        color: #38bdf8;
+      "
+    >
+      72h
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Curiosidade
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Começa forte. Algo grande está chegando, sem revelar o que é.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 552px;
+      top: 330px;
+      width: 392px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 32px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -2px;
+        color: #38bdf8;
+      "
+    >
+      48h
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        História
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        O pastor conta de onde vem essa ideia e por que agora.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="rise 4 auto"
+    style="
+      position: absolute;
+      left: 976px;
+      top: 330px;
+      width: 392px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 32px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -2px;
+        color: #38bdf8;
+      "
+    >
+      24h
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+        "
+      >
+        Contagem
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #b9c3d4">
+        Contagem regressiva, lembretes e anúncios no pico.
+      </p>
+    </div>
+  </div>
+  <div
+    data-build-in="pop 5 auto"
+    style="
+      position: absolute;
+      left: 1400px;
+      top: 330px;
+      width: 392px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #ff5a1f;
+      padding: 32px;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -2px;
+        color: #0b0f1a;
+      "
+    >
+      Dia D
+    </p>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <h3
+        style="
+          font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+          font-size: 44px;
+          font-weight: 700;
+          line-height: 1.15;
+          letter-spacing: -1px;
+          color: #0b0f1a;
+        "
+      >
+        Revelação
+      </h3>
+      <p style="font-size: 24px; line-height: 1.4; color: #0b0f1a">
+        O pastor revela ao vivo no evento e o app abre na mesma hora.
+      </p>
+    </div>
+  </div>
+  <p
+    data-build-in="rise 6 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 762px;
+      width: 816px;
+      font-size: 32px;
+      line-height: 1.4;
+      background: #141b2d;
+      padding: 36px 32px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <b>Antes das 72h:</b> aquecimento da audiência
+  </p>
+  <p
+    data-build-in="rise 7 auto"
+    style="
+      position: absolute;
+      left: 976px;
+      top: 762px;
+      width: 816px;
+      font-size: 32px;
+      line-height: 1.4;
+      background: #141b2d;
+      padding: 36px 32px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <b>A janela toda:</b> anúncios no Instagram
+  </p>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      bottom: 64px;
+      width: 1300px;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    Data e horário: definidos com o pastor, no momento certo
+  </p>
+  <p
+    style="
+      position: absolute;
+      right: 128px;
+      bottom: 64px;
+      width: 200px;
+      text-align: right;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    12 / 14
+  </p>
+  <aside>
+    A curiosidade é o motor. Ninguém fora da equipe sabe o que é até o pastor
+    revelar no dia do evento. A data sai do estudo de público e da agenda da
+    igreja.
+  </aside>
+</section>
+
+<section
+  id="investimento"
+  data-transition="push"
+  style="
+    background: #0b0f1a;
+    color: #eef2f8;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 900px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff5a1f;
+    "
+  >
+    05 · Investimento
+  </p>
+  <h2
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 176px;
+      width: 1664px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    "
+  >
+    Investimento
+  </h2>
+  <div
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 330px;
+      width: 533px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 48px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family:
+          &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #38bdf8;
+      "
+    >
+      Criação do app
+    </p>
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -2px;
+      "
+    >
+      [R$ __]
+    </p>
+    <p style="font-size: 32px; line-height: 1.4; color: #b9c3d4">
+      Descoberta, design e desenvolvimento até o lançamento.
+    </p>
+  </div>
+  <div
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 693px;
+      top: 330px;
+      width: 533px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 48px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family:
+          &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #38bdf8;
+      "
+    >
+      Operação mensal
+    </p>
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -2px;
+      "
+    >
+      [R$ __]
+    </p>
+    <p style="font-size: 32px; line-height: 1.4; color: #b9c3d4">
+      Hospedagem, suporte e evolução contínua.
+    </p>
+  </div>
+  <div
+    data-build-in="rise 4 auto"
+    style="
+      position: absolute;
+      left: 1258px;
+      top: 330px;
+      width: 534px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #141b2d;
+      padding: 48px;
+      border: 1px solid #26304a;
+      border-radius: 20px;
+    "
+  >
+    <p
+      style="
+        font-family:
+          &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #38bdf8;
+      "
+    >
+      Prazo total
+    </p>
+    <p
+      style="
+        font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -2px;
+      "
+    >
+      [__ sem.]
+    </p>
+    <p style="font-size: 32px; line-height: 1.4; color: #b9c3d4">
+      Da assinatura ao app nas mãos dos membros.
+    </p>
+  </div>
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      bottom: 64px;
+      width: 1300px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #9aa6ba;
+    "
+  >
+    Brasil Clips · Church Technology
+  </p>
+  <p
+    style="
+      position: absolute;
+      right: 128px;
+      bottom: 64px;
+      width: 200px;
+      text-align: right;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    13 / 14
+  </p>
+  <aside>
+    Valores e prazo a preencher. Se o modelo for de assinatura dos membros ou
+    divisão de receita, trocar os dois primeiros blocos.
+  </aside>
+</section>
+
+<section
+  id="proximo"
+  data-transition="fade"
+  style="
+    background: #0b0f1a;
+    color: #eef2f8;
+    font-family: &quot;DM Sans&quot;, Arial, sans-serif;
+    padding: 128px;
+  "
+>
+  <div
+    style="
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 1920px;
+      height: 1080px;
+      background: radial-gradient(
+        circle at 6% 92%,
+        rgba(255, 90, 31, 0.4) 0%,
+        rgba(255, 90, 31, 0) 44%
+      );
+    "
+  ></div>
+  <div
+    style="
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 1920px;
+      height: 1080px;
+      background: radial-gradient(
+        circle at 52% 0%,
+        rgba(56, 189, 248, 0.24) 0%,
+        rgba(56, 189, 248, 0) 40%
+      );
+    "
+  ></div>
+  <img
+    src="img/josue-fechamento.jpg"
+    alt="Pr. Josué Valandro Jr. falando para a câmera em um vídeo do Instagram"
+    data-build-in="fade 1 auto"
+    style="
+      position: absolute;
+      left: 1072px;
+      top: 128px;
+      width: 720px;
+      height: 772px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid #26304a;
+    "
+  />
+  <p
+    style="
+      position: absolute;
+      left: 128px;
+      top: 128px;
+      width: 880px;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ff5a1f;
+    "
+  >
+    Próximo passo
+  </p>
+  <h2
+    data-build-in="rise 2 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 200px;
+      width: 880px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -2px;
+    "
+  >
+    Uma conversa de 30 minutos para escolher o que entra na primeira versão.
+  </h2>
+  <p
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 760px;
+      width: 880px;
+      font-family: &quot;Space Grotesk&quot;, Arial, sans-serif;
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.15;
+    "
+  >
+    Brasil Clips
+  </p>
+  <p
+    data-build-in="rise 3 auto"
+    style="
+      position: absolute;
+      left: 128px;
+      top: 824px;
+      width: 880px;
+      font-size: 24px;
+      line-height: 1.4;
+      color: #b9c3d4;
+    "
+  >
+    Tecnologia desenvolvida por Church Technology
+  </p>
+  <p
+    style="
+      position: absolute;
+      right: 128px;
+      bottom: 64px;
+      width: 200px;
+      text-align: right;
+      font-family:
+        &quot;JetBrains Mono&quot;, &quot;Courier New&quot;, monospace;
+      font-size: 24px;
+      color: #9aa6ba;
+    "
+  >
+    14 / 14
+  </p>
+  <aside>
+    Fechar com um pedido pequeno e concreto: uma conversa, não uma assinatura.
+  </aside>
+</section>
+
+</div></div>
+<div id="bar"></div>
+<script>
+(function () {
+  var deck = document.getElementById('deck');
+  var slides = Array.prototype.slice.call(deck.querySelectorAll('section'));
+  var bar = document.getElementById('bar');
+  var current = -1;
+
+  slides.forEach(function (slide) {
+    slide.querySelectorAll('[data-build-in]').forEach(function (el) {
+      var parts = el.getAttribute('data-build-in').split(/\s+/);
+      el.style.setProperty('--kind', parts[0]);
+      el.style.setProperty('--order', parts[1] || '1');
+    });
+  });
+
+  function fit() {
+    var scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    deck.style.transform = 'scale(' + scale + ') translate(-50%, -50%)';
+  }
+
+  function show(index) {
+    index = Math.max(0, Math.min(slides.length - 1, index));
+    if (index === current) return;
+    current = index;
+    slides.forEach(function (slide, i) { slide.classList.toggle('active', i === index); });
+    bar.style.width = ((index + 1) / slides.length * 100) + '%';
+    history.replaceState(null, '', '#' + (index + 1));
+  }
+
+  document.addEventListener('keydown', function (event) {
+    if (['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter'].indexOf(event.key) >= 0) { event.preventDefault(); show(current + 1); }
+    else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].indexOf(event.key) >= 0) { event.preventDefault(); show(current - 1); }
+    else if (event.key === 'Home') show(0);
+    else if (event.key === 'End') show(slides.length - 1);
+    else if (event.key === 'f' || event.key === 'F') {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else document.documentElement.requestFullscreen();
+    }
+  });
+
+  document.addEventListener('click', function (event) {
+    show(current + (event.clientX < window.innerWidth * 0.3 ? -1 : 1));
+  });
+
+  var touchX = null;
+  document.addEventListener('touchstart', function (event) { touchX = event.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', function (event) {
+    if (touchX === null) return;
+    var delta = event.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if (Math.abs(delta) > 40) { event.preventDefault(); show(current + (delta < 0 ? 1 : -1)); }
+  });
+
+  window.addEventListener('resize', fit);
+  fit();
+  show((parseInt(location.hash.slice(1), 10) || 1) - 1);
+})();
+</script>
+</body>
+</html>
